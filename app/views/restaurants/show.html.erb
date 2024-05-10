@@ -7,9 +7,12 @@
   <p><strong>Reviews</strong></p>
   <ul>
     <% @restaurant.reviews.each do |review| %>
-      <%= link_to restaurant.name, restaurant_path(restaurant), class: "restaurant-link" %>
+      <%= link_to review.title, restaurant_review_path(@restaurant, review), class: "review-link" %>
     <% end %>
   </ul>
 
-  <p><%= link_to 'Back', restaurants_path, class:"btn btn-light" %></p>
+<%= link_to 'Review', new_restaurant_review_path(@restaurant), class:"btn btn-light"%>
+<%= link_to 'Back', restaurants_path, class:"btn btn-light" %>
+
+
 </div>
