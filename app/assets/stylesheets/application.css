@@ -1,6 +1,7 @@
 .restaurant-link {
   text-decoration: none;
   color: rgb(77, 92, 157);
+  list-style-type: none;
 }
 
 .restaurant-link:hover {

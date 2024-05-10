@@ -1,10 +1,20 @@
 <div class="container">
   <h1>Welcome</h1>
   <p>Choose a restaurant below to review</p>
-  <% @restaurants.each do |restaurant| %>
-  <li><%=link_to restaurant.name, restaurant_path(restaurant), class:"restaurant-link" %></li>
-  <% end %>
 
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant), class: "card-link restaurant-link" %></h5>
+            <p class="card-text"><%= restaurant.address %></p>
+            <p class="card-text"><%= restaurant.category %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-  <p class="pt-3"><%= link_to 'New', new_restaurant_path, class:"btn btn-light" %></p>
+  <p class="pt-3"><%= link_to 'New', new_restaurant_path, class: "btn btn-light" %></p>
 </div>
